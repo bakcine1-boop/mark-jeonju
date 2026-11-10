@@ -139,6 +139,7 @@ function initHeroSlideshow() {
    ============================================= */
 function initCountdown() {
     const countdownText = document.getElementById('countdownText');
+    if (!countdownText) return;
     const openingDate = new Date('2026-11-14T16:00:00+09:00');
     const closingDate = new Date('2026-11-14T18:00:00+09:00');
 
@@ -147,7 +148,7 @@ function initCountdown() {
         if (now < openingDate) {
             const diff = openingDate - now;
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            countdownText.textContent = `전주 특별공연까지 D-${days} | 11.14(토) 오후 4시 전주 양정교회`;
+            countdownText.textContent = `공연까지 D-${days} · 11.14(토) 오후 4시 양정교회`;
         } else if (now <= closingDate) {
             countdownText.textContent = '지금 공연 중입니다 | 전주 양정교회';
         } else {
@@ -164,6 +165,7 @@ function initCountdown() {
    ============================================= */
 function initBookingCountdown() {
     const el = document.getElementById('bookingCountdown');
+    if (!el) return;
     const openingDate = new Date('2026-11-14T16:00:00+09:00');
     const closingDate = new Date('2026-11-14T18:00:00+09:00');
 
@@ -243,21 +245,15 @@ function initVideoEmbed() {
     const wrapper = document.getElementById('videoWrapper');
     const thumbnail = document.getElementById('videoThumbnail');
     if (!wrapper || !thumbnail) return;
-
-    const youtubeUrl = 'https://www.youtube.com/live/yz-VmakQ8yA';
-    // Extract video ID
-    const videoId = extractYouTubeId(youtubeUrl);
-
     thumbnail.addEventListener('click', () => {
-        if (videoId) {
-            thumbnail.style.display = 'none';
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
-            iframe.title = '쇼케이스 하이라이트';
-            wrapper.appendChild(iframe);
-        }
+        thumbnail.style.display = 'none';
+        const v = document.createElement('video');
+        v.src = 'promo.mp4';
+        v.controls = true; v.autoplay = true; v.playsInline = true;
+        v.setAttribute('playsinline', '');
+        v.className = 'mk-promo-video';
+        wrapper.appendChild(v);
+        v.play().catch(() => {});
     });
 }
 

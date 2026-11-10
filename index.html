@@ -7,13 +7,20 @@
     <meta name="description" content="워십 뮤지컬 마크 전주 특별공연. 2026.11.14(토) 오후 4시 전주 양정교회. 성경 속 마가의 이야기를 찬양과 드라마로 만나세요.">
     <meta property="og:title" content="WORSHIP MUSICAL MARK | 전주 특별공연">
     <meta property="og:description" content="2026.11.14(토) 오후 4시 전주 양정교회. 우리가 사랑했던 찬양이 한 편의 이야기가 됩니다.">
-    <meta property="og:image" content="https://mark.churchhistory.kr/images/poster-jeonju.jpg">
+    <meta property="og:image" content="https://mark.churchhistory.kr/images/og-mark.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mark.churchhistory.kr/">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://mark.churchhistory.kr/">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jeonju.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -22,11 +29,10 @@
             <a href="#hero" class="nav-logo">MARK</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-nav>소개</a></li>
-                <li><a href="#information" data-nav>공연정보</a></li>
-                <li><a href="#cast" data-nav>출연진</a></li>
-                <li><a href="#setlist" data-nav>수록곡</a></li>
+                <li><a href="#music" data-nav>수록곡</a></li>
                 <li><a href="#gallery" data-nav>갤러리</a></li>
-                <li><a href="#booking" data-nav class="nav-cta">예매</a></li>
+                <li><a href="#information" data-nav>공연정보</a></li>
+                <li><a href="#reserve" data-nav class="nav-cta">사전예매</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
                 <span></span><span></span><span></span>
@@ -38,48 +44,26 @@
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a href="#about" data-mobile-nav>소개</a></li>
-            <li><a href="#voice" data-mobile-nav>한마디</a></li>
-            <li><a href="#information" data-mobile-nav>공연정보</a></li>
-            
-            <li><a href="#curtaincall" data-mobile-nav>커튼콜</a></li>
-            <li><a href="#cast" data-mobile-nav>출연진</a></li>
-            <li><a href="#setlist" data-mobile-nav>수록곡</a></li>
+            <li><a href="#music" data-mobile-nav>수록곡</a></li>
             <li><a href="#gallery" data-mobile-nav>갤러리</a></li>
-            <li><a href="#creative" data-mobile-nav>제작진</a></li>
-            <li><a href="#booking" data-mobile-nav class="mobile-cta">예매</a></li>
+            <li><a href="#information" data-mobile-nav>공연정보</a></li>
+            <li><a href="#reserve" data-mobile-nav class="mobile-cta">사전예매</a></li>
         </ul>
     </div>
-
-    <!-- Section 1: Hero — Slideshow Background -->
-    <section id="hero" class="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide active">
-                <img src="gallery-02.jpg" alt="" class="hero-slide-img">
-            </div>
-            <div class="hero-slide">
-                <img src="gallery-01.jpg" alt="" class="hero-slide-img">
-            </div>
-            <div class="hero-slide">
-                <img src="gallery-04.jpg" alt="" class="hero-slide-img">
-            </div>
-            <div class="hero-slide">
-                <img src="hero-bg.jpg" alt="" class="hero-slide-img">
-            </div>
-        </div>
+    <section id="hero" class="hero mk-hero">
+        <video class="mk-hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="hero.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="hero-sub reveal">WORSHIP MUSICAL</p>
             <h1 class="hero-title reveal">Mark</h1>
             <p class="hero-title-kr reveal">마크</p>
             <p class="hero-tagline reveal">뮤지컬로 드리는 예배</p>
-            <p class="hero-date reveal">2026.11.14(토) 오후 4시 | 전주 양정교회</p>
+            <p class="hero-date mk-hero-date reveal"><strong>2026.11.14 SAT PM 4:00</strong><span>전주 양정교회</span></p>
             <div class="hero-buttons reveal">
-                <a href="#information" class="btn btn-outline-gold">공연 안내</a>
-                <a href="#information" class="btn btn-text-link">공연 정보 보기</a>
+                <a href="#reserve" class="btn btn-gold">사전예매 20,000원</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
         </div>
     </section>
 
@@ -89,8 +73,16 @@
             <span id="countdownText"></span>
         </div>
     </div>
+    <section id="intro" class="section mk-intro">
+        <div class="container">
+            <p class="mk-intro-lead reveal">우리가 사랑했던 찬양이<br>한 편의 이야기가 됩니다.</p>
+            <p class="mk-intro-body reveal">노래로 기억하고 있던 찬양,<br>마음으로 고백했던 찬양들이<br>인물과 이야기, 음악과 무대를 만나<br>한 편의 뮤지컬이 됩니다.</p>
+            <p class="mk-intro-sign reveal">WORSHIP MUSICAL MARK<br><span>뮤지컬로 드리는 예배</span></p>
+        </div>
+    </section>
 
-    <!-- Section 2: About -->
+    <figure class="mk-photo-break reveal"><img src="intro-photo.jpg" alt="무대 위 마가의 고백 장면" loading="lazy"></figure>
+
     <section id="about" class="section about">
         <div class="container">
             <div class="about-grid">
@@ -108,12 +100,11 @@
                     <img src="poster-jeonju.jpg" alt="뮤지컬 마크 포스터" loading="lazy">
                 </div>
             </div>
-            <!-- Video Section — YouTube Embed -->
             <div class="video-section reveal">
-                <h3 class="video-title">쇼케이스 하이라이트</h3>
+                <h3 class="video-title">공연 하이라이트</h3>
                 <div class="video-wrapper" id="videoWrapper">
                     <div class="video-thumbnail-wrap" id="videoThumbnail">
-                        <img src="gallery-03.jpg" alt="쇼케이스 하이라이트 썸네일" loading="lazy" class="video-thumbnail">
+                        <img src="promo-thumb.jpg" alt="공연 하이라이트 영상 썸네일" loading="lazy" class="video-thumbnail">
                         <button class="video-play-btn" aria-label="영상 재생">
                             <i class="fas fa-play"></i>
                         </button>
@@ -123,7 +114,58 @@
         </div>
     </section>
 
-    <!-- Section: Voice / Quotes -->
+    <section id="music" class="section mk-music">
+        <div class="container">
+            <span class="section-label reveal">MUSIC</span>
+            <h2 class="section-title reveal">이 찬양들을 기억하시나요</h2>
+            <p class="mk-music-copy reveal">노래로 기억하던 찬양이 한 사람의 이야기로 다가옵니다.</p>
+            <ul class="mk-music-hero">
+                <li class="reveal">가시나무</li>
+                <li class="reveal">사명</li>
+                <li class="reveal">원하고 바라고 기도합니다</li>
+                <li class="reveal">하나님은 너를 지키시는 자</li>
+                <li class="reveal">하나님의 열심</li>
+            </ul>
+            <ul class="mk-music-rest reveal">
+                <li>축복송</li><li>물이 바다 덮음같이</li><li>주의 손에 나의 손을 포개고</li><li>주여 인도하소서</li><li>가서 제자 삼으라</li>
+            </ul>
+            <div class="mk-inline-cta reveal"><a href="#reserve" class="btn btn-outline-gold">사전예매 20,000원</a></div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <span class="section-label reveal">GALLERY</span>
+            <h2 class="section-title reveal">공연 사진</h2>
+            <div class="gallery-grid reveal">
+                <div class="gallery-item gi-tall" data-index="0">
+                    <img src="gallery-01.jpg" alt="무대 위 앙상블" loading="lazy">
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="gallery-02.jpg" alt="폭풍 속 바다 장면" loading="lazy">
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="gallery-03.jpg" alt="십자가 앞 위로의 장면" loading="lazy">
+                </div>
+                <div class="gallery-item gi-wide" data-index="3">
+                    <img src="gallery-04.jpg" alt="함께 찬양하는 배우들" loading="lazy">
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="gallery-05.jpg" alt="구름 아래 노래하는 배우들" loading="lazy">
+                </div>
+                <div class="gallery-item gi-tall" data-index="5">
+                    <img src="gallery-06.jpg" alt="마을 장면" loading="lazy">
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="gallery-07.jpg" alt="마가와 바울" loading="lazy">
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="gallery-08.jpg" alt="기쁨의 노래" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="voice" class="section voice">
         <div class="container">
             <div class="voice-deco">"</div>
@@ -167,228 +209,142 @@
         </div>
     </section>
 
-    <!-- Section 3: Information -->
-    <section id="information" class="section information">
+    <section id="cast" class="section mk-people">
+        <div class="container">
+            <span class="section-label reveal">CAST &amp; CREATIVE</span>
+            <h2 class="section-title reveal">무대 위 예배를 완성하는 사람들</h2>
+            <details class="mk-acc reveal">
+                <summary><span>출연진 보기</span><i class="fas fa-chevron-down"></i></summary>
+                <div class="mk-acc-body">
+                    <img src="cast-grid.jpg" alt="뮤지컬 마크 출연진" loading="lazy" class="mk-cast-grid">
+                    <p class="mk-names">오하윤 · 전유빈 · 임하람 · 안지후 · 서승원 · 구동욱 · 김은애 · 강한별 · 임성하 · 차단비 · 정재희 · 김유진</p>
+                </div>
+            </details>
+            <details class="mk-acc reveal">
+                <summary><span>제작진 보기</span><i class="fas fa-chevron-down"></i></summary>
+                <div class="mk-acc-body mk-credits">
+                    <dl>
+                        <div><dt>대본</dt><dd>정래욱</dd></div>
+                        <div><dt>연출</dt><dd>황바울</dd></div>
+                        <div><dt>음악감독</dt><dd>최영호</dd></div>
+                        <div><dt>안무감독</dt><dd>김하안</dd></div>
+                        <div><dt>조연출</dt><dd>이주찬</dd></div>
+                        <div><dt>무대감독</dt><dd>유다미</dd></div>
+                        <div><dt>조명감독</dt><dd>유예찬</dd></div>
+                        <div><dt>음향감독</dt><dd>이기철</dd></div>
+                        <div><dt>의상디자인</dt><dd>박부희</dd></div>
+                        <div><dt>대본감수</dt><dd>박정관</dd></div>
+                        <div><dt>디자인</dt><dd>황윤희</dd></div>
+                    </dl>
+                    <p class="mk-credit-line"><b>작사·작곡</b> 김명선 송정미 하덕규 민호기 이권희 고형원 정성실 주영광 최용덕 최인혁 사공정 정래욱</p>
+                    <p class="mk-credit-line"><b>공동제작</b> CTS 문화재단, 노아(SIS기획) · <b>제작참여</b> 뉴송뮤직 · <b>홍보 마케팅 제작지원</b> 온맘닷컴 은희승 최복은 · <b>협력</b> KCCM(한국기독음악협회)</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="information" class="section information mk-info">
         <div class="container">
             <span class="section-label reveal">INFORMATION</span>
-            <h2 class="section-title reveal">전주 특별공연 안내</h2>
-            <div class="info-grid">
-                <div class="info-card reveal">
-                    <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
-                    <h3>공연 일시</h3>
-                    <p class="info-main">2026.11.14(토) 오후 4시</p>
-                    <p class="info-detail">러닝타임 약 90분 · 만 7세 이상 관람</p>
+            <h2 class="section-title reveal">전주 특별공연</h2>
+            <div class="mk-info-block reveal">
+                <p class="mk-info-date">2026.11.14 SAT <span>PM 4:00</span></p>
+                <p class="mk-info-venue">양정교회</p>
+                <p class="mk-info-addr">전주시 덕진구 천마산로 40</p>
+                <p class="mk-info-price">전주 특별공연 사전예매 <b>20,000원</b></p>
+                <ul class="mk-info-notes">
+                    <li>10매 이상 단체예매 시 10% 할인</li>
+                    <li>좌석은 선착순 입장</li>
+                    <li>러닝타임 약 90분 · 만 7세 이상 관람</li>
+                </ul>
+                <div class="mk-info-actions">
+                    <a href="#reserve" class="btn btn-gold">지금 사전예매하기</a>
+                    <a href="https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%EC%96%91%EC%A0%95%EA%B5%90%ED%9A%8C" target="_blank" rel="noopener" class="btn btn-outline-gold">네이버 지도</a>
+                    <a href="https://map.kakao.com/?q=%EC%A0%84%EC%A3%BC%20%EC%96%91%EC%A0%95%EA%B5%90%ED%9A%8C" target="_blank" rel="noopener" class="btn btn-outline-gold">카카오맵</a>
                 </div>
-                <div class="info-card reveal">
-                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>공연 장소</h3>
-                    <p class="info-main">전주 양정교회</p>
-                    <p class="info-detail">전주시 덕진구 천마산로 40</p>
-                </div>
-                <div class="info-card reveal">
-                    <div class="info-icon"><i class="fas fa-ticket-alt"></i></div>
-                    <h3>티켓</h3>
-                    <p class="info-main">사전예매 1인 20,000원</p>
-                    <p class="info-detail">전좌석 선착순 입장 · 단체 10매 이상 10% 할인</p>
-                </div>
-            </div>
-            <div class="info-booking reveal">
-                <p>사전예매는 11월 7일(토)에 마감되었습니다. 예매는 입금 확인 후 최종 확정됩니다.</p>
-                <p>예매 확인과 현장 관련 문의: CTS전북방송 <a href="tel:063-277-0069">063-277-0069</a> · <a href="tel:010-3957-5808">010-3957-5808</a></p>
-                <a href="https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%EC%96%91%EC%A0%95%EA%B5%90%ED%9A%8C" target="_blank" rel="noopener" class="btn btn-gold">오시는 길 (네이버 지도)</a>
+                <p class="mk-info-host">주최 CTS기독교TV · 주관 CTS전북방송, 양정교회</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Discount -->
+    <section id="reserve" class="section mk-reserve">
+        <div class="container">
+            <span class="section-label reveal">RESERVATION</span>
+            <h2 class="section-title reveal">사전예매</h2>
+            <p class="mk-reserve-sub reveal">홈페이지 사전예매 20,000원 · 10매 이상 단체예매 시 10% 할인 · 좌석 선착순 입장</p>
+            <div class="mk-form-wrap reveal" id="mkFormWrap">
+                <form id="mkForm" novalidate>
+                    <div class="mk-field">
+                        <span class="mk-label">예매 유형</span>
+                        <div class="mk-seg" role="radiogroup">
+                            <button type="button" class="on" data-type="개인">개인</button>
+                            <button type="button" data-type="교회·단체">교회·단체</button>
+                        </div>
+                    </div>
+                    <div class="mk-field mk-church" hidden>
+                        <label for="mkChurch" class="mk-label">교회명</label>
+                        <input id="mkChurch" placeholder="○○교회">
+                    </div>
+                    <div class="mk-field">
+                        <label for="mkName" class="mk-label" id="mkNameLabel">이름</label>
+                        <input id="mkName" autocomplete="name" placeholder="홍길동">
+                    </div>
+                    <div class="mk-field">
+                        <label for="mkPhone" class="mk-label">휴대전화</label>
+                        <input id="mkPhone" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000">
+                    </div>
+                    <div class="mk-field">
+                        <span class="mk-label">예매수량</span>
+                        <div class="mk-qty">
+                            <button type="button" data-q="-1" aria-label="수량 줄이기">−</button>
+                            <input id="mkQty" inputmode="numeric" value="1" aria-label="예매수량">
+                            <button type="button" data-q="1" aria-label="수량 늘리기">+</button>
+                            <span class="mk-qty-unit">매</span>
+                        </div>
+                    </div>
+                    <div class="mk-field">
+                        <span class="mk-label">수령방법</span>
+                        <div class="mk-pick">
+                            <label><input type="radio" name="pickup" value="공연 당일 개인수령" checked><span>공연 당일 개인수령</span></label>
+                            <label><input type="radio" name="pickup" value="교회·단체 일괄수령"><span>교회·단체 일괄수령</span></label>
+                        </div>
+                    </div>
+                    <div class="mk-field">
+                        <label for="mkNote" class="mk-label">요청사항 (선택)</label>
+                        <textarea id="mkNote" rows="2" placeholder="휠체어 좌석 필요 등"></textarea>
+                    </div>
+                    <div class="mk-sum">
+                        <div><span>1인</span><b id="mkUnit">20,000원</b></div>
+                        <div class="mk-total"><span>총 입금금액</span><b id="mkTotal">20,000원</b></div>
+                        <p class="mk-disc" id="mkDisc" hidden>10매 이상 단체예매 10% 할인이 적용되었습니다.</p>
+                    </div>
+                    <div class="mk-account">
+                        <p class="mk-label">입금계좌</p>
+                        <p class="mk-acc-no">농협 <b>1215-01-000424</b> <span>기독교텔레비전</span></p>
+                        <div class="mk-acc-btns">
+                            <button type="button" class="btn btn-outline-gold" data-copy="1215-01-000424" data-msg="계좌번호가 복사되었습니다.">계좌번호 복사</button>
+                            <button type="button" class="btn btn-outline-gold" data-copy="농협 1215-01-000424 기독교텔레비전" data-msg="계좌정보가 복사되었습니다.">계좌정보 전체 복사</button>
+                        </div>
+                    </div>
+                    <label class="mk-agree"><input type="checkbox" id="mkAgree"> 예매 확인과 안내를 위해 이름·연락처를 수집하고, 공연 후 파기하는 데 동의합니다.</label>
+                    <button type="submit" class="btn btn-gold-big mk-submit" id="mkSubmit">사전예매 신청하기</button>
+                </form>
+                <div class="mk-done" id="mkDone" hidden>
+                    <p class="mk-done-title">예매 신청이 완료되었습니다.</p>
+                    <p class="mk-done-who" id="mkDoneWho"></p>
+                    <p class="mk-done-no">예약번호 <b id="mkDoneNo"></b></p>
+                    <p class="mk-done-amt">입금하실 금액 <b id="mkDoneAmt"></b></p>
+                    <p>아래 계좌로 입금하시면 예매가 최종 확정됩니다.</p>
+                    <p class="mk-acc-no">농협 <b>1215-01-000424</b> <span>기독교텔레비전</span></p>
+                    <button type="button" class="btn btn-outline-gold" data-copy="1215-01-000424" data-msg="계좌번호가 복사되었습니다.">계좌번호 복사</button>
+                    <p class="mk-done-note">입금자명은 예매 신청자 이름과 동일하게 입력해주세요.<br>입금 확인 후 예매가 최종 확정됩니다.</p>
+                    <button type="button" class="mk-again" id="mkAgain">추가로 예매하기</button>
+                </div>
+            </div>
+            <p class="mk-contact reveal">예매 문의 CTS전북방송 <a href="tel:063-277-0069">063-277-0069</a> · <a href="tel:010-3957-5808">010-3957-5808</a></p>
+        </div>
+    </section>
     
-
-    <!-- Section 5: Special Curtain Call -->
-    
-
-    <!-- Section 6: Cast — Integrated Profile Cards -->
-    <section id="cast" class="section cast">
-        <div class="container">
-            <span class="section-label reveal">CAST</span>
-            <h2 class="section-title reveal">출연진</h2>
-            <div class="cast-grid reveal">
-                <!-- Row 1: 전유빈, 오하윤, 안지후, 구동욱 -->
-                <div class="cast-card" data-bio="한국예술종합학교 재학 (신인)">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-jeon-yubin.jpg" alt="전유빈" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">한국예술종합학교 재학 (신인)</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">마크</span>
-                    <span class="cast-name">전유빈</span>
-                </div>
-                <div class="cast-card" data-bio="한국예술종합학교 재학 (신인)">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-oh-hayoon.jpg" alt="오하윤" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">한국예술종합학교 재학 (신인)</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">마크</span>
-                    <span class="cast-name">오하윤</span>
-                </div>
-                <div class="cast-card" data-bio="김종욱 찾기, 뱀프헌터, 음악극 수궁가 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-ahn-jihu.jpg" alt="안지후" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">김종욱 찾기, 뱀프헌터, 음악극 수궁가 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">폴</span>
-                    <span class="cast-name">안지후</span>
-                </div>
-                <div class="cast-card" data-bio="넷플릭스 Take One AKMU편, 이문세 The Best 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-koo-donguk.jpg" alt="구동욱" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">넷플릭스 Take One AKMU편, 이문세 The Best 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">바나바</span>
-                    <span class="cast-name">구동욱</span>
-                </div>
-                <!-- Row 1 continued: 임하람, 차단비 -->
-                <div class="cast-card" data-bio="지저스크라이스트 수퍼스타, 데스노트, 록키호러쇼 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-im-haram.jpg" alt="임하람" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">지저스크라이스트 수퍼스타, 데스노트, 록키호러쇼 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">바나바</span>
-                    <span class="cast-name">임하람</span>
-                </div>
-                <div class="cast-card" data-bio="오즈의 의류수거함(주연), 세종1446 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-cha-danbi.jpg" alt="차단비" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">오즈의 의류수거함(주연), 세종1446 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">조이</span>
-                    <span class="cast-name">차단비</span>
-                </div>
-                <!-- Row 2: 임성하, 김은애, 강한별, 김유진, 정재희 -->
-                <div class="cast-card" data-bio="백석예술대학교 뮤지컬과 졸업 (신인)">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-im-sungha.jpg" alt="임성하" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">백석예술대학교 뮤지컬과 졸업 (신인)</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">조이</span>
-                    <span class="cast-name">임성하</span>
-                </div>
-                <div class="cast-card" data-bio="스웨그에이지 외쳐 조선! 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-kim-eunae.jpg" alt="김은애" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">스웨그에이지 외쳐 조선! 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">줄리아</span>
-                    <span class="cast-name">김은애</span>
-                </div>
-                <div class="cast-card" data-bio="설공찬, 메리골드, 사월 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-kang-hanbyul.jpg" alt="강한별" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">설공찬, 메리골드, 사월 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">줄리아</span>
-                    <span class="cast-name">강한별</span>
-                </div>
-                <div class="cast-card" data-bio="경희대 성악과/단국대 뮤지컬 석사, 싱인인더레인, 미녀와야수 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-kim-yujin.jpg" alt="김유진" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">경희대 성악과/단국대 뮤지컬 석사, 싱인인더레인, 미녀와야수 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">메리</span>
-                    <span class="cast-name">김유진</span>
-                </div>
-                <div class="cast-card" data-bio="지킬앤하이드, 스위니토드, 웃는남자 등 출연">
-                    <div class="cast-img-wrap">
-                        <img class="cast-photo" src="cast-jung-jaehee.jpg" alt="정재희" loading="lazy">
-                        <div class="cast-overlay">
-                            <span class="cast-bio-text">지킬앤하이드, 스위니토드, 웃는남자 등 출연</span>
-                        </div>
-                    </div>
-                    <span class="cast-role">메리</span>
-                    <span class="cast-name">정재희</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 7: Setlist -->
-    <section id="setlist" class="section setlist">
-        <div class="setlist-bg-img"></div>
-        <div class="container">
-            <span class="section-label reveal">SETLIST</span>
-            <h2 class="section-title reveal">수록곡</h2>
-            <p class="setlist-subtitle reveal">교회에서 오래도록 사랑받아 온 찬양들</p>
-            <p class="setlist-hint reveal"><i class="fas fa-headphones"></i> 곡명을 클릭하면 원곡을 미리 들을 수 있습니다</p>
-            <ol class="setlist-list">
-                <li class="reveal" data-yt="CCM 너는 크게 자유를 외쳐라"><span class="sl-num">01</span><span class="sl-divider"></span><span class="sl-name">너는 크게 자유를 외쳐라</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 하나님은 너를 지키시는 자"><span class="sl-num">02</span><span class="sl-divider"></span><span class="sl-name">하나님은 너를 지키시는 자</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 싹트네 찬양"><span class="sl-num">03</span><span class="sl-divider"></span><span class="sl-name">싹트네</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 가시나무 찬양"><span class="sl-num">04</span><span class="sl-divider"></span><span class="sl-name">가시나무</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="찬미워십 원하고 바라고 기도합니다"><span class="sl-num">05</span><span class="sl-divider"></span><span class="sl-name">원하고 바라고 기도합니다</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 공포가 밀려왔어 찬양"><span class="sl-num">06</span><span class="sl-divider"></span><span class="sl-name">공포가 밀려왔어</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 땅 끝까지 이르러 찬양"><span class="sl-num">07</span><span class="sl-divider"></span><span class="sl-name">땅 끝까지 이르러</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 주의 손에 나의 손을 포개고"><span class="sl-num">08</span><span class="sl-divider"></span><span class="sl-name">주의 손에 나의 손을 포개고</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 주여 인도하소서 찬양"><span class="sl-num">09</span><span class="sl-divider"></span><span class="sl-name">주여 인도하소서</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 가서 제자 삼으라 찬양"><span class="sl-num">10</span><span class="sl-divider"></span><span class="sl-name">가서 제자 삼으라</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 사명 찬양"><span class="sl-num">11</span><span class="sl-divider"></span><span class="sl-name">사명</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 하나님의 열심 찬양"><span class="sl-num">12</span><span class="sl-divider"></span><span class="sl-name">하나님의 열심</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal" data-yt="CCM 물이 바다 덮음같이 찬양"><span class="sl-num">13</span><span class="sl-divider"></span><span class="sl-name">물이 바다 덮음같이</span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-                <li class="reveal curtaincall-song" data-yt="CCM 축복송 송정미"><span class="sl-num">14</span><span class="sl-divider"></span><span class="sl-name">축복송 <em>(커튼콜)</em></span><button class="sl-play" aria-label="재생"><i class="fas fa-play"></i></button></li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- Section 8: Gallery -->
-    <section id="gallery" class="section gallery">
-        <div class="container">
-            <span class="section-label reveal">GALLERY</span>
-            <h2 class="section-title reveal">쇼케이스 &amp; 리허설</h2>
-            <div class="gallery-grid reveal">
-                <div class="gallery-item gi-tall" data-index="0">
-                    <img src="gallery-01.jpg" alt="단체 안무" loading="lazy">
-                </div>
-                <div class="gallery-item" data-index="1">
-                    <img src="gallery-02.jpg" alt="듀엣 감동 장면" loading="lazy">
-                </div>
-                <div class="gallery-item" data-index="2">
-                    <img src="gallery-03.jpg" alt="솔로 무대" loading="lazy">
-                </div>
-                <div class="gallery-item gi-wide" data-index="3">
-                    <img src="gallery-04.jpg" alt="단체 환호" loading="lazy">
-                </div>
-                <div class="gallery-item" data-index="4">
-                    <img src="gallery-05.jpg" alt="무대 전경" loading="lazy">
-                </div>
-                <div class="gallery-item gi-tall" data-index="5">
-                    <img src="gallery-06.jpg" alt="단체 포즈" loading="lazy">
-                </div>
-                <div class="gallery-item" data-index="6">
-                    <img src="gallery-07.jpg" alt="전원 정면" loading="lazy">
-                </div>
-                <div class="gallery-item" data-index="7">
-                    <img src="gallery-08.jpg" alt="무대 배너 전경" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -399,86 +355,26 @@
             <img src="" alt="" id="lbImage">
         </div>
     </div>
-
-    <!-- Section 9: Creative Team -->
-    <section id="creative" class="section creative">
-        <div class="container">
-            <span class="section-label reveal">CREATIVE TEAM</span>
-            <h2 class="section-title reveal">제작진</h2>
-            <div class="creative-grid reveal">
-                <div class="creative-item"><span class="cr-title">대본·제작</span><span class="cr-name">정래욱</span></div>
-                <div class="creative-item"><span class="cr-title">연출</span><span class="cr-name">황바울</span></div>
-                <div class="creative-item"><span class="cr-title">음악감독·편곡</span><span class="cr-name">최영호<span class="cr-sub">KBS 불후의 명곡 음악감독</span></span></div>
-                <div class="creative-item"><span class="cr-title">안무감독</span><span class="cr-name">김하얀</span></div>
-                <div class="creative-item"><span class="cr-title">조연출</span><span class="cr-name">이주찬<span class="cr-sub">한국예술종합학교 연출과</span></span></div>
-                <div class="creative-item"><span class="cr-title">무대감독</span><span class="cr-name">유다미</span></div>
-                <div class="creative-item"><span class="cr-title">조명감독</span><span class="cr-name">유예찬</span></div>
-                <div class="creative-item"><span class="cr-title">음향감독</span><span class="cr-name">이기철</span></div>
-                <div class="creative-item"><span class="cr-title">의상디자인</span><span class="cr-name">박부희</span></div>
-                <div class="creative-item"><span class="cr-title">디자인</span><span class="cr-name">황윤희</span></div>
-                <div class="creative-item"><span class="cr-title">대본감수</span><span class="cr-name">박정관 목사</span></div>
-            </div>
-            <div class="creative-composers reveal">
-                <h4>작사 · 작곡</h4>
-                <p>김명선, 송정미, 하덕규, 민호기, 이권희, 고형원, 정성실, 주영광, 최용덕, 최인혁, 사공정, 정래욱</p>
-            </div>
-            <div class="creative-footer reveal">
-                <p class="cf-main">공동제작: CTS문화재단 · 다음세대 문화선교단 노아(SIS기획)</p>
-                <p class="cf-sub">제작참여: 뉴송뮤직 | 홍보마케팅·제작지원: 온맘닷컴, 에이치스엔터테인먼트 | 협력: KCCM(한국기독음악협회)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 10: Booking CTA -->
-    <section id="booking" class="section booking">
-        <div class="booking-bg"></div>
-        <div class="container">
-            <h2 class="booking-title reveal">뮤지컬로 드리는 예배,<br>함께하세요</h2>
-            <p class="booking-info reveal">2026.11.14(토) 오후 4시 | 전주 양정교회 | 주최 CTS기독교TV · 주관 CTS전북방송, 양정교회</p>
-            <div class="booking-countdown reveal" id="bookingCountdown"></div>
-            <p class="booking-urgency reveal">잔여석이 많지 않습니다. 지금 예매하세요.</p>
-            <a href="tel:063-277-0069" class="btn btn-gold-big reveal">공연 문의 063-277-0069</a>
-            <div class="booking-contact reveal">
-                <p>문의 02-376-8293 | noabridge@hanmail.net</p>
-                <p>단체 관람(20인 이상) 별도 문의</p>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-line"></div>
+    <footer class="footer mk-footer">
         <div class="container">
-            <p class="footer-producer">CTS문화재단 × 노아(SIS기획)</p>
-            <p class="footer-partners">KCCM · 온맘닷컴 · 에이치스엔터테인먼트 · 뉴송뮤직 · FCO</p>
-            <div class="footer-social">
-                <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p class="footer-copy">© 2026 뮤지컬 마크 All Rights Reserved.</p>
-            <p class="footer-ticket">문의: CTS전북방송 063-277-0069</p>
+            <p class="footer-logo">MARK</p>
+            <p>WORSHIP MUSICAL MARK 전주 특별공연 · 2026.11.14(토) 오후 4시 · 양정교회</p>
+            <p>주최 CTS기독교TV · 주관 CTS전북방송, 양정교회 · 공동제작 CTS 문화재단, 노아(SIS기획)</p>
+            <p>문의 CTS전북방송 <a href="tel:063-277-0069">063-277-0069</a> · <a href="tel:010-3957-5808">010-3957-5808</a></p>
+            <p class="footer-copy">© 2026 WORSHIP MUSICAL MARK</p>
         </div>
     </footer>
 
-    <!-- Mini Music Player -->
-    <div class="mini-player" id="miniPlayer">
-        <div class="mini-player-inner">
-            <div class="mini-player-info">
-                <i class="fas fa-music mini-player-icon"></i>
-                <span class="mini-player-title" id="miniPlayerTitle">재생 중...</span>
-            </div>
-            <div class="mini-player-controls">
-                <button class="mini-player-close" id="miniPlayerClose" aria-label="닫기">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
-        <div class="mini-player-iframe-wrap">
-            <iframe id="miniPlayerIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="음악 재생"></iframe>
-        </div>
+    <div class="mk-bar" id="mkBar">
+        <span>홈페이지 사전예매 <b>20,000원</b></span>
+        <a href="#reserve" class="btn btn-gold">예매하기</a>
     </div>
+    <div class="mk-toast" id="mkToast"></div>
 
     <script src="main.js"></script>
+    <script src="reserve.js"></script>
 </body>
 </html>
