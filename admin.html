@@ -62,7 +62,7 @@ tr.flash td{background:rgba(201,168,76,.14);transition:background .2s}
 <main>
   <section class="login" id="login">
     <h2>관리자 확인</h2>
-    <p>관리자 PIN 6자리를 입력하세요.</p>
+    <p>관리자 PIN을 입력하세요.</p>
     <input id="pin" inputmode="numeric" maxlength="6" autocomplete="off" aria-label="관리자 PIN">
     <button id="go">확인</button>
     <p class="err" id="err"></p>
@@ -100,7 +100,7 @@ tr.flash td{background:rgba(201,168,76,.14);transition:background .2s}
   var tt; function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},2000)}
   function call(body){ body.pin=sessionStorage.getItem('mkpin')||''; return fetch(API,{method:'POST',body:JSON.stringify(body)}).then(function(r){return r.json()}); }
   function login(){
-    var p=$('#pin').value.replace(/\D/g,''); if(p.length!==6){$('#err').textContent='PIN 6자리를 입력하세요';return}
+    var p=$('#pin').value.replace(/\D/g,''); if(p.length<4||p.length>6){$('#err').textContent='PIN을 확인하세요';return}
     sessionStorage.setItem('mkpin',p); $('#go').disabled=true; $('#err').textContent='';
     load().then(function(ok){ $('#go').disabled=false; if(!ok){sessionStorage.removeItem('mkpin')} });
   }
